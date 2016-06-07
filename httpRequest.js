@@ -1,0 +1,12 @@
+// Nodeschool.io tutorial - learn you Nodeschool - exercise 8
+// making a http client request
+
+var http = require('http');
+var url = process.argv[2];
+
+http.get(url, function(response){
+  response.setEncoding('utf8');
+  response.on('data', function(data){
+    console.log(data);
+  });
+});
